@@ -26,6 +26,6 @@ app:
     expiration-ms: 86400000 # 24 horas
 
   admin:
-    email: admin@consultorio.com
-    password: Admin123!
-    nombre: Administrador
+    email: ${SPRING_AUTH_USERNAME}
+    password: ${SPRING_AUTH_PASSWORD}
+    nombre: ${SPRING_AUTH_NAME}
