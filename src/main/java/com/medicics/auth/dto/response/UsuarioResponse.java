@@ -1,12 +1,14 @@
 package com.medicics.auth.dto.response;
 
 import com.medicics.auth.model.Rol;
+import com.medicics.auth.model.Sexo;
 import com.medicics.auth.model.Usuario;
 
 public record UsuarioResponse(
         String id,
         String email,
         String nombreCompleto,
+        Sexo sexo,
         String cedulaProfesional,
         String especialidad,
         String subespecialidad,
@@ -18,6 +20,7 @@ public record UsuarioResponse(
                 usuario.getId(),
                 usuario.getEmail(),
                 usuario.getNombreCompleto(),
+                usuario.getSexo(),
                 usuario.getCedulaProfesional(),
                 usuario.getEspecialidad(),
                 usuario.getSubespecialidad(),

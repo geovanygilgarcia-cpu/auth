@@ -32,6 +32,15 @@ public class AuthServiceImpl implements IAuthService {
 
         String token = jwtService.generateToken(usuario);
 
-        return new LoginResponse(token, usuario.getRol().name(), usuario.getNombreCompleto(), usuario.getEspecialidad(), usuario.getSubespecialidad());
+        String sexo = usuario.getSexo() != null ? usuario.getSexo().name() : null;
+
+        return new LoginResponse(
+                token,
+                usuario.getRol().name(),
+                usuario.getNombreCompleto(),
+                sexo,
+                usuario.getEspecialidad(),
+                usuario.getSubespecialidad()
+        );
     }
 }

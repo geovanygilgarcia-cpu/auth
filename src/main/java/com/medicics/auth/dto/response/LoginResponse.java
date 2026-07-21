@@ -9,6 +9,7 @@ public record LoginResponse(
         String token,
         String rol,
         String nombreCompleto,
+        String sexo,
         String especialidad,
         String subespecialidad
 ) {

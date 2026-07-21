@@ -1,6 +1,7 @@
 package com.medicics.auth.dto.request;
 
 import com.medicics.auth.model.Rol;
+import com.medicics.auth.model.Sexo;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -18,6 +19,10 @@ public record UsuarioRequest(
 
         @NotBlank(message = "El nombre completo es requerido")
         String nombreCompleto,
+
+        // Opcional a nivel DTO, no se fuerza para no bloquear la creación
+        // de usuarios cuyo sexo no se quiera registrar.
+        Sexo sexo,
 
         // Opcional: solo aplica a MEDICO, pero no lo forzamos a nivel DTO
         // para no bloquear la creación de otros roles.

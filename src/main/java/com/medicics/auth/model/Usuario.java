@@ -35,6 +35,10 @@ public class Usuario implements UserDetails {
     @Column(name = "nombre_completo", nullable = false)
     private String nombreCompleto;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "sexo", length = 1)
+    private Sexo sexo;
+
     @Column(name = "cedula_profesional")
     private String cedulaProfesional;
 

@@ -6,6 +6,7 @@ import com.medicics.auth.dto.response.UsuarioResponse;
 import com.medicics.auth.exception.EmailYaRegistradoException;
 import com.medicics.auth.exception.UsuarioNoEncontradoException;
 import com.medicics.auth.model.Rol;
+import com.medicics.auth.model.Sexo;
 import com.medicics.auth.model.Usuario;
 import com.medicics.auth.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
@@ -56,6 +57,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
         usuario.setEmail(request.email());
         usuario.setNombreCompleto(request.nombreCompleto());
+        usuario.setSexo(Sexo.valueOf(request.sexo()));
         usuario.setCedulaProfesional(request.cedulaProfesional());
         usuario.setEspecialidad(request.especialidad());
         usuario.setSubespecialidad(request.subespecialidad());

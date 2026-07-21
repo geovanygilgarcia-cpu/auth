@@ -19,6 +19,8 @@ public record UsuarioUpdateRequest(
         @NotBlank(message = "El nombre completo es requerido")
         String nombreCompleto,
 
+        String sexo,
+
         String cedulaProfesional,
 
         String especialidad,
