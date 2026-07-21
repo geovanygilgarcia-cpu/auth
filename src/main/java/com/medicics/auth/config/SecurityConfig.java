@@ -52,8 +52,10 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of(
-                "*"       // producción
+        config.setAllowedOriginPatterns(List.of(
+                "http://localhost:4200",              // desarrollo local
+                "https://expmedic-front.onrender.com", // frontend desplegado (si lo sigues usando)
+                "http://127.0.0.1:*"                   // app de escritorio (Electron)
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
