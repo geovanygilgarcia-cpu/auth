@@ -6,6 +6,7 @@ package com.medicics.auth.dto.response;
  * aquí, agrégalos también allá o el login dejará de funcionar en silencio.
  */
 public record LoginResponse(
+        String id,
         String token,
         String rol,
         String nombreCompleto,

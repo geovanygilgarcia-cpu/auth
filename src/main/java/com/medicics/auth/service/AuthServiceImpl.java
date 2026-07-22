@@ -35,6 +35,7 @@ public class AuthServiceImpl implements IAuthService {
         String sexo = usuario.getSexo() != null ? usuario.getSexo().name() : null;
 
         return new LoginResponse(
+                usuario.getId(),
                 token,
                 usuario.getRol().name(),
                 usuario.getNombreCompleto(),
